@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas",
+    "gauge-chart": "../../components/custom-charts/gauge-chart/gauge-chart",
+    "line-chart": "../../components/custom-charts/line-chart/line-chart",
+    "pie-chart": "../../components/custom-charts/pie-chart/pie-chart"
+  },
+  "navigationBarTitleText": "收支可视化"
+}

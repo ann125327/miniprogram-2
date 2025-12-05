@@ -1,0 +1,194 @@
+.visualization-page {
+  /* 这里的 200rpx 要比绿色头部的高度稍大一点 */
+  padding-top: 200rpx; 
+  padding-bottom: 30rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+/* 2. 【新增】自定义绿色头部样式 */
+.custom-header {
+  position: fixed; /* 关键：固定定位，不随页面滚动 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx; /* 高度覆盖状态栏和胶囊按钮 */
+  background-color: #29C369; 
+  z-index: 999; /* 层级设高，防止被图表盖住 */
+  
+  /* 布局：让标题文字居中并靠下 */
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  padding-bottom: 25rpx; /* 让文字离底部有点距离 */
+  box-shadow: 0 4rpx 10rpx rgba(44, 193, 105, 0.2); /* 加一点投影更立体 */
+}
+
+/* 头部标题文字 */
+.header-title {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+/* 解决顶部遮挡问题 */
+.visualization-page {
+  padding-top: 180rpx;
+  padding-bottom: 30rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+/* 统一的图表卡片样式 */
+.chart-container {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  /* 默认 block 布局，会自然从上到下排列，无需额外设置 */
+}
+
+.chart-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  padding-left: 10rpx;
+  border-left: 6rpx solid #4990E2;
+}
+
+/* 筛选区 */
+.filter-area {
+  padding: 0 20rpx 20rpx 20rpx;
+  background-color: transparent;
+}
+
+.filter-period {
+  background-color: #fff;
+  padding: 15rpx 30rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #4990E2;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.filter-period .arrow {
+  margin-left: 10rpx;
+  font-size: 20rpx;
+}
+
+/* 数据卡片 */
+.data-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 30rpx;
+}
+
+.card {
+  flex: 1;
+  background-color: #fff;
+  padding: 30rpx 20rpx;
+  border-radius: 12rpx;
+  margin: 0 10rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.card .label {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.card .amount {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.expense .amount {
+  color: #FF6347;
+}
+
+.income .amount {
+  color: #4CAF50;
+}
+
+/* 加载遮罩 */
+.loading-mask {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}/* --- 新增：空状态样式 --- */
+/* --- 空状态样式 --- */
+.empty-chart {
+  width: 100%;
+  height: 350rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F9FA; 
+  border: 2rpx dashed #E0E0E0; 
+  border-radius: 12rpx;
+  /* margin-top: 20rpx;  <-- 删掉或注释掉这行，因为在卡片里不需要隔太远 */
+}
+
+.empty-chart text {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+/* visualization.wxss (末尾新增) */
+
+/* 预算输入区域样式 */
+.budget-input-area {
+  padding-bottom: 30rpx;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 8rpx;
+  padding: 15rpx;
+  background-color: #f7f7f7;
+}
+
+.input-group text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 15rpx;
+}
+
+.budget-input {
+  flex-grow: 1; /* 占据剩余空间 */
+  font-size: 32rpx;
+  height: 50rpx;
+  padding: 0 10rpx;
+}
+
+.set-button {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #4990E2;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
+  border-radius: 6rpx;
+  white-space: nowrap;
+}
+
+.set-button[disabled] {
+    background-color: #cccccc;
+    color: #999999;
+}
