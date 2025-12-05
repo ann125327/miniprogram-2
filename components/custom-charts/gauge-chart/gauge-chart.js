@@ -1,7 +1,7 @@
 import * as echarts from '../../ec-canvas/echarts';
 
 let chart = null;
-
+//初始化
 function initChart(canvas, width, height, dpr) {
   chart = echarts.init(canvas, null, {
     width: width,
@@ -14,16 +14,15 @@ function initChart(canvas, width, height, dpr) {
 
 Component({
   properties: {
-    // 必须定义为 Number，否则页面无法使用 .toFixed
     actualExpense: {
       type: Number,
       value: 0
-    },
+    },//实际支出
     budget: {
       type: Number,
       value: 2000
     }
-  },
+  },//预算
   data: {
     ec: {
       onInit: initChart
@@ -31,7 +30,7 @@ Component({
     isLoaded: false
   },
   observers: {
-    // 监听两个属性的变化
+    // 监听属性变化
     'actualExpense, budget': function(actualExpense, budget) {
       if (this.data.isLoaded && chart) {
         this.setOption(actualExpense, budget);
@@ -51,10 +50,10 @@ Component({
   methods: {
     setOption(actualExpense, budget) {
       if (!chart) return;
-
+//具体计算渲染
       const percentage = budget > 0 ? (actualExpense / budget) * 100 : 0;
       const value = Math.min(100, Math.round(percentage));
-
+      
       const option = {
         series: [{
           type: 'gauge',
@@ -62,8 +61,8 @@ Component({
           endAngle: 0,
           min: 0,
           max: 100,
-          radius: '90%', // 放大一点仪表盘
-          center: ['50%', '70%'], // 调整位置
+          radius: '90%', 
+          center: ['50%', '70%'], 
           splitNumber: 8,
           itemStyle: {
             color: '#58D9F9',

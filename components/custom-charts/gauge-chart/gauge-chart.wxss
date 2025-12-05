@@ -1,6 +1,6 @@
 .gauge-wrap {
   width: 100%;
-  height: 500rpx; /* 必须给高度 */
+  height: 500rpx; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +10,12 @@
 
 .ec-canvas {
   width: 100%;
-  height: 400rpx; /* 画布高度 */
+  height: 400rpx; 
   display: block;
 }
 
 .chart-info {
-  margin-top: -20rpx; /* 稍微往上提一点，紧凑一些 */
+  margin-top: -20rpx; /*显示预算和实际支出的文本向上移动一点，让文本能够更靠近仪表盘*/
   font-size: 28rpx;
   color: #666;
   font-weight: 500;

@@ -1,27 +1,27 @@
 .visualization-page {
-  /* 这里的 200rpx 要比绿色头部的高度稍大一点 */
+
   padding-top: 200rpx; 
   padding-bottom: 30rpx;
   background-color: #f7f7f7;
   min-height: 100vh;
 }
 
-/* 2. 【新增】自定义绿色头部样式 */
+/* 顶部固定导航栏*/
 .custom-header {
-  position: fixed; /* 关键：固定定位，不随页面滚动 */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  height: 120rpx; /* 高度覆盖状态栏和胶囊按钮 */
+  height: 120rpx; 
   background-color: #29C369; 
-  z-index: 999; /* 层级设高，防止被图表盖住 */
+  z-index: 999; 
   
-  /* 布局：让标题文字居中并靠下 */
+  
   display: flex;
   align-items: flex-end; 
   justify-content: center;
-  padding-bottom: 25rpx; /* 让文字离底部有点距离 */
-  box-shadow: 0 4rpx 10rpx rgba(44, 193, 105, 0.2); /* 加一点投影更立体 */
+  padding-bottom: 25rpx; 
+  box-shadow: 0 4rpx 10rpx rgba(44, 193, 105, 0.2); 
 }
 
 /* 头部标题文字 */
@@ -31,7 +31,7 @@
   font-weight: bold;
   letter-spacing: 2rpx;
 }
-/* 解决顶部遮挡问题 */
+
 .visualization-page {
   padding-top: 180rpx;
   padding-bottom: 30rpx;
@@ -39,14 +39,14 @@
   min-height: 100vh;
 }
 
-/* 统一的图表卡片样式 */
+/* 图表卡片样式 */
 .chart-container {
   background-color: #fff;
   margin: 20rpx;
   padding: 20rpx;
   border-radius: 12rpx;
   box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
-  /* 默认 block 布局，会自然从上到下排列，无需额外设置 */
+
 }
 
 .chart-title {
@@ -117,7 +117,7 @@
   color: #4CAF50;
 }
 
-/* 加载遮罩 */
+/* 加载遮罩，防止用户在数据未加载好时与页面进行交互，看到数据的闪烁状态。*/
 .loading-mask {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -126,8 +126,8 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
-}/* --- 新增：空状态样式 --- */
-/* --- 空状态样式 --- */
+}
+/* 饼图的空状态样式*/
 .empty-chart {
   width: 100%;
   height: 350rpx;
@@ -138,7 +138,7 @@
   background-color: #F8F9FA; 
   border: 2rpx dashed #E0E0E0; 
   border-radius: 12rpx;
-  /* margin-top: 20rpx;  <-- 删掉或注释掉这行，因为在卡片里不需要隔太远 */
+ 
 }
 
 .empty-chart text {
@@ -146,9 +146,9 @@
   color: #999;
   margin-top: 10rpx;
 }
-/* visualization.wxss (末尾新增) */
 
-/* 预算输入区域样式 */
+
+/* 预算输入区域*/
 .budget-input-area {
   padding-bottom: 30rpx;
 }
@@ -170,7 +170,7 @@
 }
 
 .budget-input {
-  flex-grow: 1; /* 占据剩余空间 */
+  flex-grow: 1; 
   font-size: 32rpx;
   height: 50rpx;
   padding: 0 10rpx;
