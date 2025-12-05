@@ -1,5 +1,3 @@
-// pie-chart.js
-// 1. 【修正路径】这里恢复成你原来正确的相对路径
 import * as echarts from '../../ec-canvas/echarts';
 
 Component({
@@ -25,7 +23,8 @@ Component({
   },
   lifetimes: {
     ready() {
-      // 2. 【增加延时】给视图一点渲染时间，防止宽/高为0导致图表画不出来
+      // 增加了一个200毫秒的延迟，确保WXML渲染完成，<canvas> 元素获取到正确的宽度和高度（非零值）。
+      //用来避免ECharts在尺寸计算错误时无法正确渲染的问题。
       setTimeout(() => {
         this.initChart();
       }, 200); 
@@ -42,11 +41,10 @@ Component({
     initChart() {
       this.ecComponent = this.selectComponent('.ec-canvas');
       
-      // 安全检查：防止组件还没加载完
       if (!this.ecComponent) return;
 
       this.ecComponent.init((canvas, width, height, dpr) => {
-        // 3. 创建图表实例
+        // 创建图表
         const chart = echarts.init(canvas, null, {
           width: width,
           height: height,
@@ -54,11 +52,11 @@ Component({
         });
         canvas.setChart(chart);
 
-        // 4. 【关键】将 chart 存入 this，保证每个组件实例独立
+        // 避免接收完数据后只能显示一个饼图，将chart存入this，保证每个饼图能独立接收数据
         this.chart = chart;
         this.setData({ isLoaded: true });
 
-        // 如果此时已有数据，立即绘制
+        // 确保数据接收完成再绘制，依旧为了避免ECharts在没数据时就开始画图而导致无法正确渲染的问题
         if (this.data.chartData && this.data.chartData.length > 0) {
            this.setOption(this.data.chartData);
         }
@@ -129,7 +127,6 @@ Component({
     handleChartClick(params) {
       if (params.componentType === 'series') {
         const dataIndex = params.dataIndex;
-        // 安全取值
         if(this.data.chartData && this.data.chartData[dataIndex]){
              const categoryId = this.data.chartData[dataIndex].categoryId;
              this.triggerEvent('categoryTap', {

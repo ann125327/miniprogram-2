@@ -1,8 +1,6 @@
 import * as echarts from '../../ec-canvas/echarts';
 
 let chart = null;
-let startX = 0; // 用于长按判断
-let timer = null; // 用于长按计时
 let isZooming = false; // 用于双指缩放判断
 let lastDistance = 0; // 上次双指距离
 
@@ -30,7 +28,7 @@ Component({
       onInit: initChart
     },
     isLoaded: false,
-    dataZoom: [0, 100] // 当前数据窗口比例
+    dataZoom: [0, 100] // 用于记录和恢复缩放状态
   },
   observers: {
     'chartData': function(chartData) {
@@ -45,6 +43,8 @@ Component({
         initChart(canvas, width, height, dpr);
         this.setData({ isLoaded: true }, () => {
           this.setOption(this.data.chartData);
+          
+          // 监听 ECharts 内部的datazoom事件，同步状态到dataZoom属性
           chart.on('datazoom', (params) => {
             const start = chart.getOption().dataZoom[0].start;
             const end = chart.getOption().dataZoom[0].end;
@@ -58,7 +58,8 @@ Component({
     setOption(data) {
       if (!chart) return;
 
-      const dates = data.map(item => item.date.slice(5)); // 显示月-日
+      // 提取X轴数据（只显示月-日）和Y轴数据
+      const dates = data.map(item => item.date.slice(5)); 
       const amounts = data.map(item => item.amount);
 
       const option = {
@@ -73,7 +74,8 @@ Component({
           data: dates,
           boundaryGap: false,
           axisLabel: {
-            interval: Math.floor(dates.length / 5), // 自动稀疏刻度
+            // 自动稀疏刻度，防止标签重叠
+            interval: Math.floor(dates.length / 5), 
             rotate: 45
           }
         },
@@ -95,6 +97,7 @@ Component({
             color: '#4990E2',
             width: 2
           },
+          // 渐变填充
           areaStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
               offset: 0,
@@ -104,6 +107,7 @@ Component({
               color: 'rgba(73, 144, 226, 0)'
             }])
           },
+          // 标记最大值点
           markPoint: {
             data: [{
               type: 'max',
@@ -116,12 +120,14 @@ Component({
           axisPointer: {
             type: 'cross'
           },
+          // 自定义 tooltip 格式，显示完整日期
           formatter: function(params) {
             const item = params[0];
-            const date = data[item.dataIndex].date; // 格式化为完整日期
+            const date = data[item.dataIndex].date; 
             return `${date}<br/>${item.marker}${item.seriesName}: ${item.value.toFixed(2)}元`;
           }
         },
+        // 双指缩放配置
         dataZoom: [{
           type: 'inside',
           xAxisIndex: [0],
@@ -133,54 +139,26 @@ Component({
       chart.setOption(option, true);
     },
 
-    // --- 长按显示 tooltip 逻辑 ---
     touchStart(e) {
-      if (e.touches.length === 1) {
-        startX = e.touches[0].clientX;
-        timer = setTimeout(() => {
-          this.showLongPressTooltip(e.touches[0].clientX, e.touches[0].clientY);
-          timer = null;
-        }, 500); // 长按 500ms
-      } else if (e.touches.length === 2) {
+      // 处理双指触控，用于启动缩放
+      if (e.touches.length === 2) { 
         isZooming = true;
         lastDistance = this.getDistance(e.touches[0], e.touches[1]);
       }
     },
     touchMove(e) {
-      if (timer && Math.abs(e.touches[0].clientX - startX) > 10) {
-        clearTimeout(timer); // 移动超过阈值，取消长按
-        timer = null;
-      }
+      // 检查是否处于双指缩放状态
       if (isZooming && e.touches.length === 2) {
         this.handleZoom(e.touches);
       }
     },
     touchEnd(e) {
-      if (timer) {
-        clearTimeout(timer); // 释放时如果计时器还在，取消
-        timer = null;
-      }
+      // 结束缩放状态
       isZooming = false;
     },
-
-    showLongPressTooltip(x, y) {
-      if (!chart) return;
-      // 核心：调用 ECharts 实例的 dispatchAction 触发 tooltip
-      chart.dispatchAction({
-        type: 'showTip',
-        x: x,
-        y: y
-      });
-      // 保持 tooltip 5秒
-      setTimeout(() => {
-        chart.dispatchAction({
-          type: 'hideTip'
-        });
-      }, 5000);
-    },
-
     // --- 双指缩放逻辑（DataZoom 控制） ---
     getDistance(t1, t2) {
+      // 计算两触点之间的距离
       return Math.sqrt(Math.pow(t2.clientX - t1.clientX, 2) + Math.pow(t2.clientY - t1.clientY, 2));
     },
     handleZoom(touches) {
@@ -188,7 +166,6 @@ Component({
       const diff = currentDistance - lastDistance;
       lastDistance = currentDistance;
 
-      // 缩放灵敏度
       const sensitivity = 0.5;
       const zoomFactor = diff * sensitivity;
 
@@ -203,7 +180,7 @@ Component({
       let newStart = center - newLen / 2;
       let newEnd = center + newLen / 2;
 
-      // 边界处理
+      // 边界处理（确保缩放窗口不超出0-100%的范围
       if (newStart < 0) {
         newStart = 0;
         newEnd = newLen;
@@ -214,6 +191,7 @@ Component({
 
       this.setData({ dataZoom: [newStart, newEnd] });
 
+      // ECharts的dataZoom action
       chart.dispatchAction({
         type: 'dataZoom',
         dataZoomIndex: 0,
