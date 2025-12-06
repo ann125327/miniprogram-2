@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="form">
+    <!--类型选择-->
+    <view class="form-section">
+      <view class="section-title">类型</view>
+      <view class="type-selector">
+        <view 
+          class="type-option {{type === 'expense' ? 'active expense' : ''}}" 
+          bindtap="setType" 
+          data-type="expense"
+        >
+          支出
+        </view>
+        <view 
+          class="type-option {{type === 'income' ? 'active income' : ''}}" 
+          bindtap="setType" 
+          data-type="income"
+        >
+          收入
+        </view>
+      </view>
+    </view>
+
+    <!--日期选择-->
+    <view class="form-section">
+      <view class="section-title">日期</view>
+      <picker mode="date" value="{{currentDate}}" bindchange="onDateChange" start="2000-01-01" end="{{currentDate}}">
+        <view class="date-picker">{{date}}</view>
+      </picker>
+    </view>
+
+    <!--分类选择-->
+    <view class="form-section">
+      <view class="section-title">分类</view>
+      <view class="category-grid">
+        <view 
+          class="category-item {{category === item ? 'active' : ''}}" 
+          wx:for="{{categories[type]}}" 
+          wx:key="*this" 
+          bindtap="selectCategory" 
+          data-category="{{item}}"
+        >
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!--金额输入-->
+    <view class="form-section">
+      <view class="section-title">金额</view>
+      <view class="amount-input">
+        <text class="symbol">¥</text>
+        <input 
+          type="number" 
+          placeholder="0.00" 
+          bindinput="onAmountInput"
+          value="{{amount}}"
+        />
+      </view>
+    </view>
+
+    <!--备注输入-->
+    <view class="form-section">
+      <view class="section-title">备注</view>
+      <input 
+        class="note-input" 
+        placeholder="选填" 
+        bindinput="onNoteInput"
+        value="{{note}}"
+      />
+    </view>
+
+    <!--提交按钮-->
+    <view class="submit-btn" bindtap="submitRecord">
+      <text class="submit-text">保存</text>
+    </view>
+  </view>
+</view>
