@@ -24,7 +24,7 @@ App({
     userInfo: null,
     systemInfo: null,
     
-    // 重点：这里存储用户的月度预算
+   
     // 仪表盘组件 (Gauge Chart) 需要读取这个数值
     userBudget: 3000.00 
 
