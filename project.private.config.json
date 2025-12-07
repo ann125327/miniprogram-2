@@ -18,5 +18,25 @@
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": true
   },
-  "libVersion": "3.12.0"
+  "libVersion": "3.12.0",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/visualization/visualization",
+          "pathName": "pages/visualization/visualization",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "pages/add/add",
+          "pathName": "pages/add/add",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

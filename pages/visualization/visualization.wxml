@@ -1,9 +1,5 @@
 <view class="visualization-page">
   
-  <view class="custom-header">
-    <view class="header-title">收支可视化</view>
-  </view>
-
   <view class="filter-area">
     <picker mode="selector" range="{{ periods }}" value="{{ periodIndex }}" bindchange="handlePeriodChange">
       <view class="filter-item filter-period">
@@ -28,32 +24,32 @@
     </view>
   </view>
 
- 
-  <view class="chart-container budget-input-area">
+  <view class="chart-container">
     <view class="chart-title">设置每月预算</view>
-    <view class="input-group">
-        <text>¥</text>
+    <view class="budget-row">
+      <view class="budget-input-box">
+        <text class="currency">¥</text>
         <input 
-            class="budget-input"
-            type="digit"
-            placeholder="{{ '当前预算: ' + currentBudget }}"
-            value="{{ newBudgetValue }}"
-            bindinput="handleBudgetInput"
+          type="number" 
+          class="budget-input" 
+          placeholder="当前预算: {{ currentBudget }}" 
+          placeholder-style="color: #ccc;"
+          bindinput="handleBudgetInput"
+          value="{{ inputBudgetValue }}"
         />
-        <button 
-            class="set-button" 
-            bindtap="setNewBudget"
-            disabled="{{ !newBudgetValue }}"
-        >设置</button>
+      </view>
+      <button class="save-btn" size="mini" bindtap="handleSaveBudget">设置</button>
     </view>
-</view>
-<view class="chart-container">
+  </view>
+
+  <view class="chart-container">
     <view class="chart-title">预算使用</view>
     <gauge-chart 
       actualExpense="{{ expenseValue }}" 
       budget="{{ currentBudget }}">
     </gauge-chart>
-</view>
+  </view>
+
   <view class="chart-container">
     <view class="chart-title">收支趋势图 (支出)</view>
     <block wx:if="{{ lineChartData.length > 0 }}">
