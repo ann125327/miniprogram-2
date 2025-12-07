@@ -1,0 +1,14 @@
+<view class="about-container">
+  <view class="about-card">
+    <image class="logo" src="/images/cat.png" mode="aspectFit"></image>
+    <text class="app-name">记账喵</text>
+    <text class="version">版本号：v1.0.0</text>
+    <view class="desc">
+      一款简洁实用的记账工具，帮你记录每一笔收支，轻松管理个人财务～    如遇任何问题，欢迎联系我们！
+    </view>
+    <view class="contact">
+      <text class="contact-title">联系我们：</text>
+      <text class="contact-info">aaaaaaag.com</text>
+    </view>
+  </view>
+</view>

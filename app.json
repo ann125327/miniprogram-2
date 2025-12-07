@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",  
+    "pages/privacy/privacy" ,
+    "pages/bookkeeping/bookkeeping", 
+    "pages/statis/statis",
+    "pages/mine/edit-user/edit-user",
+    "pages/mine/about/about",
+    "pages/mine/bill-analysis/bill-analysis",
+    "pages/mine/mine"              
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff", 
+    "navigationBarTextStyle": "black",          
+    "navigationBarTitleText": "我的记账本",  
+    "backgroundTextStyle": "light",             
+    "enablePullDownRefresh": false              
+  },
+  "tabBar": {
+    "color": "#666666",        
+    "selectedColor": "#f4ea2a", 
+    "backgroundColor": "#ffffff", 
+    "borderStyle": "black",   
+    "list": [
+      {
+        "pagePath": "pages/bookkeeping/bookkeeping", 
+        "text": "记账",                            
+        "iconPath": "/images/tabbar/cacubefore.png", 
+        "selectedIconPath": "/images/tabbar/cacuafter.png" 
+      },
+      {
+        "pagePath": "pages/statis/statis",
+        "text": "统计",
+        "iconPath": "/images/tabbar/tongjibefore.png",
+        "selectedIconPath": "/images/tabbar/tongjiafter.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/tabbar/mybefore.png",
+        "selectedIconPath": "/images/tabbar/myafter.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2" }

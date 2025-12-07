@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "关于我们",
+  "navigationBarBackgroundColor": "#FFF2CC",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "tabBar": { "hidden": true }
+}

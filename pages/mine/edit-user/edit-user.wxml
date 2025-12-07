@@ -1,0 +1,33 @@
+<view class="edit-container">
+  <view class="avatar-edit">
+    <text class="section-title">头像设置</text>
+    <!-- 头像预览（圆形） -->
+    <view class="avatar-preview" bindtap="previewAvatar">
+      <image 
+        src="{{userInfo.avatarUrl || '/images/head1.png'}}" 
+        mode="aspectFill"
+      ></image>
+    </view>
+    <!-- 选择图片按钮（删除所有内联 style） -->
+    <button class="choose-btn" bindtap="chooseAvatarFromAlbum">
+      从相册选择图片
+    </button>
+    <button class="choose-btn" bindtap="chooseAvatarFromCamera" style="margin-top: 20rpx;">
+      拍摄照片
+    </button>
+  </view>
+
+  <!-- 昵称修改区域 -->
+  <view class="nickname-edit">
+    <text class="section-title">昵称设置</text>
+    <view class="nickname-input">
+      <input 
+        placeholder="请输入昵称（1-10字）" 
+        value="{{newNickname}}" 
+        bindinput="onNicknameInput"
+        maxlength="10"
+      ></input>
+    </view>
+    <button class="save-btn" bindtap="saveNickname">保存昵称</button>
+  </view>
+</view>

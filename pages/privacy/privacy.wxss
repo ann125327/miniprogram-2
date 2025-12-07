@@ -1,0 +1,46 @@
+
+.privacy-container {
+  padding: 30rpx 40rpx;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+
+.privacy-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+
+.privacy-content {
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.8;
+}
+
+
+.content-heading {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin: 30rpx 0 15rpx 0;
+}
+
+
+.content-paragraph {
+  margin-bottom: 20rpx;
+  text-indent: 52rpx;  
+}
+
+
+.policy-date {
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+}

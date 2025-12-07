@@ -1,0 +1,21 @@
+.analysis-container {
+  padding: 40rpx 30rpx;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+
+}
+
+.empty-tip {
+  text-align: center;
+}
+
+.empty-tip image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+}
+
+.tip-text {
+  font-size: 30rpx;
+  color: #666;
+}

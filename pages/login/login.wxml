@@ -1,0 +1,44 @@
+<image 
+  class="login-bg" 
+  src="/images/login.jpg" 
+></image>
+<view class="login-container">
+
+  <view class="avatar-wrapper">
+    <image 
+      class="avatar" 
+      src="{{userInfo.avatarUrl || '/images/head1.png'}}" 
+      mode="aspectFill"
+    ></image>
+  </view>
+
+
+  <view class="nickname">{{userInfo.nickName || '请登录'}}</view>
+<view class="privacy-agree">
+ 
+  <checkbox-group bindchange="handleAgreeChange">
+    <checkbox 
+      class="agree-checkbox" 
+      checked="{{isAgreePrivacy}}"  
+    ></checkbox>
+  </checkbox-group>
+  
+  <view class="privacy-text">
+    我已阅读并同意
+    <navigator url="/pages/privacy/privacy" class="privacy-link">《本记账本小程序的隐私条款》</navigator>
+  </view>
+</view>
+  <button 
+    class="login-btn" 
+    bindtap="handleWechatLogin" 
+    disabled="{{!isAgreePrivacy}}"  
+    open-type="getUserInfo"        
+    bindgetuserinfo="handleGetUserInfo"  
+   style="position: relative; left: 0rpx; top: -18rpx">
+    微信一键登录
+  </button>
+
+  <view class="auth-tip" wx:if="{{showAuthTip}}">
+    请授权用户信息后登录，否则无法使用小程序功能
+  </view>
+</view>

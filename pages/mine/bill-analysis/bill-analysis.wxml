@@ -1,0 +1,6 @@
+<view class="analysis-container">
+  <view class="empty-tip">
+    <image src="/images/empty.png" mode="aspectFit"></image>
+    <text class="tip-text">账单分析功能即将上线～</text>
+  </view>
+</view>

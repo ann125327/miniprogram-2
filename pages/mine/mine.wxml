@@ -1,0 +1,107 @@
+
+<view class="top-bg"></view>
+
+<view class="mine-container">
+  <view class="user-card" bindtap="toEditUserInfo">
+    <view class="avatar-wrap">
+      <image 
+        class="avatar" 
+        src="{{userInfo.avatarUrl || '/images/head1.png'}}" 
+        mode="aspectFill"
+      ></image>
+      <image class="edit-icon" src="/images/edit.png" mode="aspectFit"></image>
+    </view>
+    <view class="user-info">
+      <text class="nickname">{{userInfo.nickName || '未设置昵称'}}</text>
+      <text class="tag" style="position: relative; left: 18rpx; top: 0rpx">记账达人</text>
+    </view>
+  </view>
+
+  <!-- 2. 数据统计区 -->
+  <view class="statistic-wrap">
+    <view class="core-stat-card">
+      <view class="core-item">
+        <text class="core-num">{{recordDays}}</text>
+        <text class="core-text" style="position: relative; left: 14rpx; top: -6rpx">记账天数</text>
+      </view>
+      <view class="core-divider"></view>
+      <view class="core-item">
+        <text class="core-num">{{billCount}}</text>
+        <text class="core-text" style="position: relative; left: 16rpx; top: -6rpx">总记账笔数</text>
+      </view>
+    </view>
+
+
+    <view class="budget-stat-card">
+      <view class="budget-top">
+        <view class="budget-item">
+          <text class="budget-text">当月消费</text>
+          <text class="budget-num" style="position: relative; left: 14rpx; top: 2rpx">¥{{monthExpense}}</text>
+        </view>
+        <view class="budget-item">
+          <text class="budget-text" style="position: relative; left: -20rpx; top: 0rpx">当月收入</text>
+          <text class="budget-num" style="position: relative; left: -4rpx; top: 4rpx">¥{{monthIncome}}</text>
+        </view>
+      </view>
+      <view class="budget-bottom">
+        <view class="budget-label">
+          <text>本月预算：¥{{monthBudget}}</text>
+          <text class="budget-rate">{{budgetRate}}%</text>
+        </view>
+        <view class="progress-bar">
+          <view class="progress-fill" style="width: {{budgetRate}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="func-section">
+    <text class="section-title">个人设置</text>
+    <view class="func-list">
+      <view class="func-item" bindtap="toEditUserInfo">
+        <image class="func-icon" src="/images/edit.png"></image>
+        <text class="func-text">修改头像/昵称</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="func-section">
+    <text class="section-title">功能服务</text>
+    <view class="func-list">
+      <view class="func-item" bindtap="toBillAnalysis">
+        <image class="func-icon" src="/images/analysis.png"></image>
+        <text class="func-text">账单分析</text>
+       
+      </view>
+      <view class="func-item" bindtap="toShare">
+        <image class="func-icon" src="/images/share1.png"></image>
+        <text class="func-text">分享小程序</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="func-section">
+    <text class="section-title">系统设置</text>
+    <view class="func-list">
+      <view class="func-item" bindtap="toAbout">
+        <image class="func-icon" src="/images/about.png"></image>
+        <text class="func-text">关于我们</text>
+      
+      </view>
+      <view class="func-item">
+        <image class="func-icon" src="/images/now1.png"></image>
+        <text class="func-text">当前版本</text>
+        <text class="version-text">v1.0.0</text>
+
+      </view>
+      <view class="func-item logout-item" bindtap="logout">
+        <image class="func-icon" src="/images/out1.png"></image>
+        <text class="func-text logout-text">退出登录</text>
+      
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+
+{
+  "usingComponents": {},   
+  "navigationBarTitleText": "请先登录一下吧~", 
+  "navigationBarBackgroundColor": "#e9e058", 
+  "navigationBarTextStyle": "white", 
+  "enablePullDownRefresh": false 
+}

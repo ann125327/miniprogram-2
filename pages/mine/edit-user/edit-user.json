@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "修改个人信息",
+  "navigationBarBackgroundColor": "#FFD700",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "tabBar": { "hidden": true }}

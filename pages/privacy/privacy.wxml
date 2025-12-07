@@ -1,0 +1,52 @@
+<view class="privacy-container">
+  <view class="privacy-title">隐私政策</view>
+  <view class="privacy-content">
+    <view class="content-paragraph">
+      欢迎使用本小程序（以下简称"小程序"）。为保障您的隐私安全，我们制定本隐私政策，告知您小程序收集、使用、存储和保护您个人信息的相关情况，请您仔细阅读。
+    </view>
+
+    <view class="content-heading">一、我们收集的信息</view>
+    <view class="content-paragraph">
+      1. 您使用微信一键登录时，我们会获取您的微信昵称、头像（均为微信公开信息），用于小程序内展示您的个人身份。
+    </view>
+    <view class="content-paragraph">
+      2. 我们不会收集您的微信账号、手机号、地理位置等敏感信息。
+    </view>
+
+    <view class="content-heading">二、信息的使用目的</view>
+    <view class="content-paragraph">
+      1. 昵称和头像仅用于小程序内的个人信息展示（如个人中心），不会用于其他用途。
+    </view>
+    <view class="content-paragraph">
+      2. 我们不会将您的个人信息分享给任何第三方，除非获得您的明确授权或法律要求。
+    </view>
+
+    <view class="content-heading">三、信息的存储与保护</view>
+    <view class="content-paragraph">
+      1. 您的个人信息仅存储在小程序本地缓存和我们的安全服务器中，我们会采取加密等安全措施保护信息安全。
+    </view>
+    <view class="content-paragraph">
+      2. 您可随时卸载小程序，本地缓存的个人信息会随之删除；如需删除服务器存储的信息，可联系我们处理。
+    </view>
+
+    <view class="content-heading">四、您的权利</view>
+    <view class="content-paragraph">
+      1. 您可以拒绝授权个人信息，但可能无法使用小程序的核心功能。
+    </view>
+    <view class="content-paragraph">
+      2. 您可通过小程序内的相关功能查看、修改或删除您的个人信息（后续会逐步完善）。
+    </view>
+
+    <view class="content-heading">五、政策更新</view>
+    <view class="content-paragraph">
+      本隐私政策可能会根据小程序更新或法律法规变化进行调整，更新后会在小程序内公示，请您留意。
+    </view>
+
+    <view class="content-heading">六、联系我们</view>
+    <view class="content-paragraph">
+      如您对隐私政策有疑问或建议，可通过小程序内的联系入口与我们沟通。
+    </view>
+
+    <view class="policy-date">最后更新日期：2025年11月24日</view>
+  </view>
+</view>

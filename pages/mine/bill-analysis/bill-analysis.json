@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "账单分析",
+  "navigationBarBackgroundColor": "#FFF2CC",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "tabBar": { "hidden": true }
+}

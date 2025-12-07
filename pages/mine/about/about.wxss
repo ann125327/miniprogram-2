@@ -1,0 +1,53 @@
+.about-container {
+  padding: 40rpx 30rpx;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.about-card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 30rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto 30rpx;
+}
+
+.app-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-bottom: 40rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 40rpx;
+  text-align: left;
+}
+
+.contact-title {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-info {
+  font-size: 26rpx;
+  color: #FFC107;
+}
