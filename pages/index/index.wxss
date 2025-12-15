@@ -1,0 +1,297 @@
+page {
+  width:100%;
+  height: 100%;
+  margin:0;
+  padding:0;
+  background-color: #f5f5f5;
+  overflow:hidden;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding-top:0;
+  padding-bottom: 0;
+}
+
+/*统计区域*/
+.stats-section {
+  background: white;
+  padding: 30rpx 0;
+  width:100%;
+  position: relative;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  z-index: 10;
+  flex-shrink: 0; /*防止被压缩*/
+}
+
+.stats-header {
+  padding: 0 30rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.stats-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.header-right {
+  height: 60rpx;
+}
+
+/*月份选择器样式*/
+.month-picker {
+  font-size: 28rpx;
+  color: #07c160;
+  padding: 12rpx 20rpx;
+  border: 2rpx solid #07c160;
+  border-radius: 10rpx;
+  background: rgba(7, 193, 96, 0.1);
+  white-space: nowrap;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+picker {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stats-cards {
+  display: flex;
+  padding: 15rpx 30rpx 0;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 10rpx;
+  border-radius: 15rpx;
+  transition: all 0.2s ease;
+}
+
+.stat-label {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+  flex-shrink: 0;
+}
+
+.stat-amount {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 34rpx;
+  font-weight: bold;
+  line-height:1;
+  min-height: 80rpx;
+  padding:8rpx,16rpx;
+  text-align: center;
+  box-sizing: border-box;
+  width:80%;
+}
+
+.expense {
+  color: #e54d42;
+}
+
+.income {
+  color: #07c160;
+}
+
+/*记录区域区域*/
+.records-section {
+  flex: 1;
+  width: 100%;
+  background: white;
+  overflow-y: scroll; /*允许垂直滚动*/
+  -webkit-overflow-scrolling: touch; /*在iOS上启用顺滑滚动*/
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  padding: 0 30rpx;
+  text-align: center;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.empty-tip {
+  font-size: 26rpx;
+  color: #ccc;
+}
+
+/*记录列表*/
+.records-list {
+  width: 100%;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 6rpx solid #f8f8f8;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.record-item:last-child {
+  border-bottom:none;
+}
+
+/*记录图标*/
+.record-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25rpx;
+  flex-shrink: 0; /*防止图标被压缩*/
+}
+
+.record-icon.expense {
+  background: rgba(229, 77, 66, 0.1);
+}
+
+.record-icon.income {
+  background: rgba(7, 193, 96, 0.1);
+}
+
+.icon-text {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.record-icon.expense .icon-text {
+  color: #e54d42;
+}
+
+.record-icon.income .icon-text {
+  color: #07c160;
+}
+
+/*记录详情*/
+.record-details {
+  flex: 1;
+  min-width: 0; /*防止内容溢出*/
+}
+
+.record-category {
+  display: block;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-note {
+  display: block;
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 5rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record-date {
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+
+.amount-text {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.btn-icon {
+  color: white;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.float-btn{
+  position:fixed;
+  right:40rpx;
+  bottom: 160rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: #07c160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6rpx 20rpx rgba(7, 193, 96, 0.4);
+  z-index: 1000;
+}
+
+/*激活状态的金额样式*/
+.stat-amount.active {
+  position: relative;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*支出按钮激活状态*/
+.expense.active {
+  background-color: rgba(229, 77, 66, 0.15);
+  box-shadow: 0 0 0 2rpx rgba(229, 77, 66, 0.3);
+}
+
+/*收入按钮激活状态*/
+.income.active {
+  background-color: rgba(7, 193, 96, 0.15);
+  box-shadow: 0 0 0 2rpx rgba(7, 193, 96, 0.3);
+}
+
+
+/*底部提示样式*/
+.bottom-tip {
+  width: 100%;
+  padding: 40rpx 0;
+  text-align: center;
+  background: white;
+  border-top: 1rpx solid #f8f8f8;
+}
+
+.tip-text {
+  font-size: 26rpx;
+  color: #ccc;
+}

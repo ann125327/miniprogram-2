@@ -1,0 +1,8 @@
+<view class="chart-container">
+  <view class="chart-title">收支趋势图</view>
+  <ec-canvas id="line-chart" class="ec-canvas" ec="{{ ec }}" 
+    bind:touchstart="touchStart"
+    bind:touchmove="touchMove"
+    bind:touchend="touchEnd"
+  ></ec-canvas>
+</view>

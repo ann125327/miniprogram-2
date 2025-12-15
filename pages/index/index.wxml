@@ -1,0 +1,79 @@
+<view class="container">
+  <!--顶部统计区域-->
+  <view class="stats-section">
+    <view class="stats-header">
+      <view class="header-left">
+        <text class="stats-title">收支明细</text>
+      </view>
+      <view class="header-right">
+        <!--月份选择器-->
+        <picker 
+          mode="date" 
+          fields="month" 
+          value="{{selectedMonth}}" 
+          bindchange="onMonthChange"
+          start="2000-01"
+          end="{{currentMonth}}"
+        >
+          <view class="month-picker">{{selectedMonth}} ▼</view>
+        </picker>
+      </view>
+    </view>
+    
+    <view class="stats-cards">
+      <!-- 支出按钮 -->
+      <view class="stat-card" bindtap="onExpenseTap">
+        <text class="stat-label">总支出</text>
+        <text class="stat-amount expense {{activeFilter === 'expense' ? 'active' : ''}}">
+          ¥{{totalExpense}}
+        </text>
+      </view>
+      
+      <!-- 收入按钮 -->
+      <view class="stat-card" bindtap="onIncomeTap">
+        <text class="stat-label">总收入</text>
+        <text class="stat-amount income {{activeFilter === 'income' ? 'active' : ''}}">
+          ¥{{totalIncome}}
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!--明细列表区域-->
+  <scroll-view class="records-section" scroll-y="true">
+    <view wx:if="{{filteredRecords.length === 0}}" class="empty-state">
+      <text class="empty-text">
+        {{activeFilter 
+          ? (activeFilter === 'expense' ? '该月份没有支出记录' : '该月份没有收入记录') 
+          : (selectedMonth === currentMonth ? '本月还没有记账记录' : '该月份没有记账记录')}}
+      </text>
+      <text class="empty-tip">点击右下角按钮开始记账</text>
+    </view>
+
+    <view wx:else class="records-list">
+      <view class="record-item" wx:for="{{filteredRecords}}" wx:key="id">
+        <view class="record-icon {{item.type}}">
+          <text class="icon-text">{{item.type === 'expense' ? '支' : '收'}}</text>
+        </view>
+        
+        <view class="record-details">
+          <text class="record-category">{{item.category}}</text>
+          <text class="record-note">{{item.note}}</text>
+          <text class="record-date">{{item.date}}</text>
+        </view>
+        
+        <view class="record-amount {{item.type}}">
+          <text class="amount-text">{{item.type === 'expense' ? '-' : '+'}}{{item.amount}}</text>
+        </view>
+      </view>
+      <view class="bottom-tip">
+        <text class="tip-text">已经到底啦~</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!--悬浮按钮-->
+  <view class="float-btn" bindtap="goToAdd">
+    <text class="btn-icon">+</text>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+.pie-wrap {
+  width: 100%;
+  height: 400rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.ec-canvas {
+  width: 100%;
+  height: 100%;
+  display: block; /* 防止行内元素间隙 */
+}

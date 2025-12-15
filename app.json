@@ -7,6 +7,9 @@
     "pages/mine/edit-user/edit-user",
     "pages/mine/about/about",
     "pages/mine/bill-analysis/bill-analysis",
+     "pages/index/index",
+    "pages/add/add",
+    "pages/visualization/visualization",
     "pages/mine/mine"              
   ],
   "window": {
@@ -44,3 +47,4 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2" }
+

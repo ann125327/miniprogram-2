@@ -1,0 +1,8 @@
+<view class="gauge-wrap">
+  <ec-canvas id="gauge-chart" class="ec-canvas" ec="{{ ec }}"></ec-canvas>
+  <view class="chart-info">
+    <text>实际支出 ¥ {{ actualExpense.toFixed(2) }}</text>
+    <text style="margin: 0 10rpx; color: #ddd;">/</text>
+    <text>预算 ¥ {{ budget.toFixed(2) }}</text>
+  </view>
+</view>
