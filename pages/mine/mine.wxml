@@ -49,7 +49,7 @@
           <text class="budget-rate">{{budgetRate}}%</text>
         </view>
         <view class="progress-bar">
-          <view class="progress-fill" style="width: {{budgetRate}}%"></view>
+          <view class="progress-fill" style="width: {{budgetRate}}">%</view>
         </view>
       </view>
     </view>
