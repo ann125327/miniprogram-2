@@ -80,7 +80,8 @@ onDateChange(e) {
       category: category,
       amount: parseFloat(amount).toFixed(2),
       note: note || '无备注',
-      date: date //使用选择的日期
+      date: date ,//使用选择的日期
+      createTime: Date.now()
     }
 
     //保存到全局数据

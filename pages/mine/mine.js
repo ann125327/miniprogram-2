@@ -5,10 +5,7 @@ Page({
     userInfo: {},
     recordDays: 0,    // 记账天数
     billCount: 0,     // 总记账笔数
-    monthExpense: 0,  // 当月消费
-    monthIncome: 0,   // 当月收入
-    monthBudget: 2000,// 当月预算（默认2000）
-    budgetRate: 0     // 预算使用比例（%）
+    
   },
 
 
@@ -29,15 +26,14 @@ onLoad() {
 
 
   getUserInfo() {
-    const userInfo = app.globalData.userInfo || wx.getStorageSync("userInfo");
+    const userInfo = app.getUserInfo();
     this.setData({ userInfo });
   },
 
 
   calcAllStatData() {
-    const billList = wx.getStorageSync("billList") || [];
-    const now = new Date();
-    const currentMonth = now.getMonth() + 1;
+    const billList = app.globalData.records || wx.getStorageSync("records") || [];
+
 
     const billCount = billList.length;
 
@@ -45,33 +41,9 @@ onLoad() {
     const firstLoginTime = wx.getStorageSync("firstLoginTime");
     const recordDays = Math.ceil((Date.now() - firstLoginTime) / (1000 * 60 * 60 * 24));
 
-
-    let monthExpense = 0;
-    let monthIncome = 0;
-    billList.forEach(bill => {
-      const billMonth = new Date(bill.createTime).getMonth() + 1;
-      if (billMonth === currentMonth) {
-        if (bill.type === "expense") { 
-          monthExpense += Number(bill.amount);
-        } else {
-          monthIncome += Number(bill.amount);
-        }
-      }
-    });
-
-    monthExpense = monthExpense.toFixed(2);
-    monthIncome = monthIncome.toFixed(2);
-
-
-// 修复后
-const budgetRate = Math.min(Math.floor((Number(monthExpense) / this.data.monthBudget) * 100), 100);
-
     this.setData({
       billCount,
-      recordDays,
-      monthExpense,
-      monthIncome,
-      budgetRate
+      recordDays
     });
   },
 

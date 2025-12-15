@@ -1,7 +1,7 @@
 // app.js
 // 小程序全局实例
 App({
-  // 全局数据（合并双方：用户信息 + 队友的记账/预算/图表数据）
+  
   globalData: {
     // 全局数据
     userInfo: null,  // 存储用户信息（头像、昵称）
@@ -49,5 +49,13 @@ App({
     if (storedBudget) {
       this.globalData.userBudget = Number(storedBudget);
     }
+  },
+    getRecordTotalCount() {
+    // 兼容records为空的情况，返回数组长度（总笔数）
+    return Array.isArray(this.globalData.records) ? this.globalData.records.length : 0;
+  },
+  getUserInfo() {
+    return this.globalData.userInfo || wx.getStorageSync('userInfo') || {};
   }
+
 });

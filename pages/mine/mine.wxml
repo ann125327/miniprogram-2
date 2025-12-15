@@ -30,29 +30,6 @@
         <text class="core-text" style="position: relative; left: 16rpx; top: -6rpx">总记账笔数</text>
       </view>
     </view>
-
-
-    <view class="budget-stat-card">
-      <view class="budget-top">
-        <view class="budget-item">
-          <text class="budget-text">当月消费</text>
-          <text class="budget-num" style="position: relative; left: 14rpx; top: 2rpx">¥{{monthExpense}}</text>
-        </view>
-        <view class="budget-item">
-          <text class="budget-text" style="position: relative; left: -20rpx; top: 0rpx">当月收入</text>
-          <text class="budget-num" style="position: relative; left: -4rpx; top: 4rpx">¥{{monthIncome}}</text>
-        </view>
-      </view>
-      <view class="budget-bottom">
-        <view class="budget-label">
-          <text>本月预算：¥{{monthBudget}}</text>
-          <text class="budget-rate">{{budgetRate}}%</text>
-        </view>
-        <view class="progress-bar">
-          <view class="progress-fill" style="width: {{budgetRate}}">%</view>
-        </view>
-      </view>
-    </view>
   </view>
 
 

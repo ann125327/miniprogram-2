@@ -8,7 +8,7 @@ Page({
 
 
   onLoad() {
-    const userInfo = app.globalData.userInfo || wx.getStorageSync("userInfo");
+    const userInfo = app.getUserInfo();
     this.setData({
       userInfo,
       newNickname: userInfo.nickName || "" // 初始化昵称输入框
