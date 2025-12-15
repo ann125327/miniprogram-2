@@ -26,8 +26,8 @@ onLoad() {
 
 
   getUserInfo() {
-    const userInfo = app.getUserInfo();
-    this.setData({ userInfo });
+    const latestUserInfo = app.globalData.userInfo || wx.getStorageSync("userInfo") || {};
+    this.setData({ userInfo: latestUserInfo });
   },
 
 
@@ -78,7 +78,7 @@ onLoad() {
         if (res.confirm) {
 
           wx.removeStorageSync("token");
-          wx.removeStorageSync("userInfo");
+          wx.removeStorageSync("tempUserInfo");
 
           app.globalData.token = "";
           app.globalData.userInfo = null;

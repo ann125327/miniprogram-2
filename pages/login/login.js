@@ -28,26 +28,36 @@ handleAgreeChange(e) {
 
 
   handleGetUserInfo(e) {
-    const userInfo = e.detail.userInfo;
-    if (userInfo) {
-  
-      this.setData({ 
-        userInfo: userInfo,
-        showAuthTip: false  
-      });
-      wx.setStorageSync("userInfo", userInfo); 
-      app.globalData.userInfo = userInfo;    
-    } else {
+const localUserInfo = wx.getStorageSync("userInfo");
+  if (localUserInfo) {
+    // 已有自定义信息，直接用，不处理微信授权的原生信息
+    this.setData({ 
+      userInfo: localUserInfo,
+      showAuthTip: false  
+    });
+    app.globalData.userInfo = localUserInfo;
+    return;
+  }
 
-      this.setData({ showAuthTip: true });
-    }
+  // 本地无自定义信息（首次登录），才用微信授权的原生信息
+  if (!e.detail.userInfo) {
+    this.setData({ showAuthTip: true });
+    return;
+  }
+  const newUserInfo = e.detail.userInfo;
+  this.setData({ 
+    userInfo: newUserInfo,
+    showAuthTip: false  
+  });
+  wx.setStorageSync("userInfo", newUserInfo); // 首次登录存微信原生信息
+  app.globalData.userInfo = newUserInfo;      
   },
 
 
   handleWechatLogin() {
      console.log("登录按钮被点击了");
     const { isAgreePrivacy, userInfo } = this.data;
-
+    const localUserInfo = wx.getStorageSync("userInfo");
 
     if (!isAgreePrivacy) {
       wx.showToast({
@@ -83,7 +93,8 @@ handleAgreeChange(e) {
            
             wx.setStorageSync("token", token);
             app.globalData.token = token;     
-            
+            app.globalData.userInfo = localUserInfo;
+
  
             wx.hideLoading();
             wx.showToast({ title: "登录成功！" });

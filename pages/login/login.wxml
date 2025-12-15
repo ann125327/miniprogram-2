@@ -13,7 +13,7 @@
   </view>
 
 
-  <view class="nickname">{{userInfo.nickName || '请登录'}}</view>
+  <view class="nickname">{{userInfo.nickName || '你好！请登录吧'}}</view>
 <view class="privacy-agree">
  
   <checkbox-group bindchange="handleAgreeChange">

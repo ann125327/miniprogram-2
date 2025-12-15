@@ -30,6 +30,7 @@ Page({
     wx.chooseImage({
       count: 1, 
       sizeType: ["compressed"], 
+      sourceType: [sourceType],
       success: (res) => {
         const tempFilePath = res.tempFilePaths[0];
 
