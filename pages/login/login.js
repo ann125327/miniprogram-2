@@ -90,7 +90,7 @@ handleAgreeChange(e) {
 
 
             setTimeout(() => {
-              wx.switchTab({ url: "/pages/bookkeeping/bookkeeping", fail: (err) => {
+              wx.switchTab({ url: "/pages/index/index", fail: (err) => {
       console.error("跳转失败：", err); 
     } });
              

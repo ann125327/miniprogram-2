@@ -2,8 +2,6 @@
   "pages": [
     "pages/login/login",  
     "pages/privacy/privacy" ,
-    "pages/bookkeeping/bookkeeping", 
-    "pages/statis/statis",
     "pages/mine/edit-user/edit-user",
     "pages/mine/about/about",
     "pages/mine/bill-analysis/bill-analysis",
@@ -26,13 +24,13 @@
     "borderStyle": "black",   
     "list": [
       {
-        "pagePath": "pages/bookkeeping/bookkeeping", 
+        "pagePath": "pages/index/index", 
         "text": "记账",                            
         "iconPath": "/images/tabbar/cacubefore.png", 
         "selectedIconPath": "/images/tabbar/cacuafter.png" 
       },
       {
-        "pagePath": "pages/statis/statis",
+        "pagePath": "pages/visualization/visualization",
         "text": "统计",
         "iconPath": "/images/tabbar/tongjibefore.png",
         "selectedIconPath": "/images/tabbar/tongjiafter.png"
