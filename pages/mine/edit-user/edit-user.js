@@ -108,9 +108,16 @@ Page({
     app.globalData.userInfo = newUserInfo;
     wx.setStorageSync("userInfo", newUserInfo);
     this.setData({ userInfo: newUserInfo });
-    wx.showToast({ title: "昵称修改成功" });
-        wx.switchTab({
+    wx.showToast({ 
+    title: "昵称修改成功", 
+    icon: "success", 
+    duration: 1500  // 提示显示1.5秒
+  });
+  
+  setTimeout(() => {
+    wx.switchTab({
       url: "/pages/mine/mine"
     });
+  }, 1500); // 延迟1.5秒，和Toast显示时长一致
   }
 });
