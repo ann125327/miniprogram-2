@@ -23,12 +23,16 @@ page {
 /*统计区域*/
 .stats-section {
   background: white;
+  width:95%;
   padding: 30rpx 0;
-  width:100%;
   position: relative;
   box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
   z-index: 10;
   flex-shrink: 0; /*防止被压缩*/
+  border-radius:30rpx;
+  margin-top:20rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
 }
 
 .stats-header {
@@ -56,11 +60,11 @@ page {
 /*月份选择器样式*/
 .month-picker {
   font-size: 28rpx;
-  color: #07c160;
+  color: #FFD300;
   padding: 12rpx 20rpx;
-  border: 2rpx solid #07c160;
+  border: 2rpx solid #FFD300;
   border-radius: 10rpx;
-  background: rgba(7, 193, 96, 0.1);
+  background: rgba(255, 211, 0, 0.1);
   white-space: nowrap;
   height: 100%;
   box-sizing: border-box;
@@ -123,10 +127,12 @@ picker {
 /*记录区域区域*/
 .records-section {
   flex: 1;
-  width: 100%;
-  background: white;
+  width: 95%;
+  background: #f5f5f5;
   overflow-y: scroll; /*允许垂直滚动*/
   -webkit-overflow-scrolling: touch; /*在iOS上启用顺滑滚动*/
+  border-radius:30rpx;
+  margin-top: 20rpx;
 }
 
 .empty-state {
@@ -137,6 +143,7 @@ picker {
   height: 60vh;
   padding: 0 30rpx;
   text-align: center;
+  background-color: #f5f5f5;
 }
 
 .empty-text {
@@ -153,16 +160,22 @@ picker {
 /*记录列表*/
 .records-list {
   width: 100%;
+  display: flex;
+  flex-direction: column; 
+  gap: 20rpx; 
 }
 
 .record-item {
   display: flex;
   align-items: center;
   padding: 30rpx;
-  border-bottom: 6rpx solid #f8f8f8;
   width: 100%;
   box-sizing: border-box;
+  border-radius:30rpx;
+  background-color: white;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
 }
+
 
 .record-item:last-child {
   border-bottom:none;
@@ -251,12 +264,12 @@ picker {
   bottom: 160rpx;
   width: 120rpx;
   height: 120rpx;
-  background: #07c160;
+  background: #FFD300;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6rpx 20rpx rgba(7, 193, 96, 0.4);
+  box-shadow: 0 6rpx 20rpx rgba(255, 211, 0, 0.4);
   z-index: 1000;
 }
 
@@ -287,8 +300,7 @@ picker {
   width: 100%;
   padding: 40rpx 0;
   text-align: center;
-  background: white;
-  border-top: 1rpx solid #f8f8f8;
+  background: #f5f5f5;
 }
 
 .tip-text {

@@ -1,37 +1,4 @@
-.visualization-page {
-
-  padding-top: 0rpx; 
-  padding-bottom: 20rpx;
-  background-color: #f7f7f7;
-  min-height: 100vh;
-}
-
-/* 顶部固定导航栏*/
-.custom-header {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120rpx; 
-  background-color: #29C369; 
-  z-index: 999; 
-  
-  
-  display: flex;
-  align-items: flex-end; 
-  justify-content: center;
-  padding-bottom: 25rpx; 
-  box-shadow: 0 4rpx 10rpx rgba(44, 193, 105, 0.2); 
-}
-
-/* 头部标题文字 */
-.header-title {
-  color: #fff;
-  font-size: 34rpx;
-  font-weight: bold;
-  letter-spacing: 2rpx;
-}
-
+/* 页面背景 */
 .visualization-page {
   padding-top: 180rpx;
   padding-bottom: 30rpx;
@@ -39,100 +6,144 @@
   min-height: 100vh;
 }
 
+/* 顶部固定导航栏  */
+.custom-header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx; 
+  background-color: #FFD300; 
+  z-index: 999; 
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  padding-bottom: 25rpx; 
+  box-shadow: 0 4rpx 12rpx rgba(255, 211, 0, 0.2); 
+}
+
+/* 头部标题文字 */
+.header-title {
+  color: #333333; 
+  font-size: 34rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+
 /* 图表卡片样式 */
 .chart-container {
   background-color: #fff;
   margin: 20rpx;
-  padding: 20rpx;
-  border-radius: 12rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
-
+  padding: 30rpx;
+  border-radius: 24rpx; 
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
 }
 
+/* 图表标题 */
 .chart-title {
   font-size: 32rpx;
   font-weight: bold;
   margin-bottom: 20rpx;
-  padding-left: 10rpx;
-  border-left: 6rpx solid #4990E2;
+  padding-left: 15rpx;
+  border-left: 8rpx solid #FFD300; 
 }
 
 /* 筛选区 */
 .filter-area {
   margin-top: -100rpx; 
-  
   position: relative;
   z-index: 10;
-  
   padding: 0 20rpx 20rpx 20rpx;
-  background-color: transparent;
 }
 
 .filter-period {
   background-color: #fff;
-  padding: 15rpx 30rpx;
-  border-radius: 40rpx;
+  padding: 15rpx 35rpx;
+  border-radius: 50rpx; 
   font-size: 28rpx;
   font-weight: bold;
-  color: #4990E2;
+  color: #333;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
 }
 
-.filter-period .arrow {
-  margin-left: 10rpx;
-  font-size: 20rpx;
-}
-
-/* 数据卡片 */
+/* 数据卡片样式 */
 .data-cards {
   display: flex;
   justify-content: space-around;
-  margin: 30rpx;
+  margin: 10rpx 20rpx 30rpx;
 }
 
 .card {
   flex: 1;
   background-color: #fff;
-  padding: 30rpx 20rpx;
-  border-radius: 12rpx;
+  padding: 35rpx 20rpx;
+  border-radius: 24rpx; 
   margin: 0 10rpx;
   text-align: center;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
 }
 
 .card .label {
   display: block;
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #999;
-  margin-bottom: 10rpx;
+  margin-bottom: 12rpx;
 }
 
 .card .amount {
-  font-size: 36rpx;
+  font-size: 38rpx;
   font-weight: bold;
+  /* 默认颜色作为备选 */
+  color: #333; 
 }
 
-.expense .amount {
-  color: #FF6347;
-}
 
+
+/* 总收入 */
 .income .amount {
-  color: #4CAF50;
+  color: #4CAF50 !important; 
 }
 
-/* 加载遮罩，防止用户在数据未加载好时与页面进行交互，看到数据的闪烁状态。*/
-.loading-mask {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+/* 总支出 */
+.expense .amount {
+  color: #FF6347 !important; 
 }
-/* 饼图的空状态样式*/
+
+/* 预算输入区域 */
+.budget-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.budget-input-box {
+  flex: 1;
+  background-color: #f8f8f8;
+  border-radius: 12rpx;
+  padding: 15rpx 20rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+/* 保存按钮 */
+.save-btn {
+  background-color: #FFD300 !important; 
+  color: #333333 !important;
+  font-weight: bold;
+  border-radius: 40rpx; 
+  padding: 0 45rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 28rpx;
+  margin: 0;
+  border: none;
+}
+
+/* 空状态样式 */
 .empty-chart {
   width: 100%;
   height: 350rpx;
@@ -140,101 +151,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #F8F9FA; 
-  border: 2rpx dashed #E0E0E0; 
-  border-radius: 12rpx;
- 
-}
-
-.empty-chart text {
-  font-size: 26rpx;
-  color: #999;
-  margin-top: 10rpx;
-}
-
-
-/* 预算输入区域*/
-.budget-input-area {
-  padding-bottom: 30rpx;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  border: 2rpx solid #e0e0e0;
-  border-radius: 8rpx;
-  padding: 15rpx;
-  background-color: #f7f7f7;
-}
-
-.input-group text {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333;
-  margin-right: 15rpx;
-}
-
-.budget-input {
-  flex-grow: 1; 
-  font-size: 32rpx;
-  height: 50rpx;
-  padding: 0 10rpx;
-}
-
-.set-button {
-  height: 60rpx;
-  line-height: 60rpx;
-  font-size: 26rpx;
-  color: #fff;
-  background-color: #4990E2;
-  margin-left: 20rpx;
-  padding: 0 20rpx;
-  border-radius: 6rpx;
-  white-space: nowrap;
-}
-
-.set-button[disabled] {
-    background-color: #cccccc;
-    color: #999999;
-}
-/* --- 设置预算样式 --- */
-.budget-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 15rpx;
-  padding: 10rpx 0;
-}
-
-.budget-input-box {
-  flex: 1;
-  background-color: #f5f5f5;
-  border-radius: 8rpx;
-  padding: 15rpx 20rpx;
-  display: flex;
-  align-items: center;
-  margin-right: 20rpx;
-}
-
-.currency {
-  font-weight: bold;
-  color: #333;
-  margin-right: 10rpx;
-}
-
-.budget-input {
-  flex: 1;
-  font-size: 28rpx;
-  color: #333;
-}
-
-.save-btn {
-  background-color: #29C369 !important; 
-  color: #fff !important;
-  font-weight: normal;
-  border-radius: 8rpx;
-  padding: 0 40rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  margin: 0; 
+  background-color: #fdfdfd; 
+  border: 2rpx dashed #eee; 
+  border-radius: 24rpx;
 }

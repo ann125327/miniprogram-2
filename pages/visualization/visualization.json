@@ -6,6 +6,6 @@
     "pie-chart": "../../components/custom-charts/pie-chart/pie-chart"
   },
   "navigationBarTitleText": "收支可视化",
-  "navigationBarBackgroundColor": "#29C369", 
-  "navigationBarTextStyle": "white"
+  "navigationBarBackgroundColor": "#FFD300",
+  "navigationBarTextStyle": "black"
 }

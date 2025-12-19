@@ -10,8 +10,9 @@
     "pages/visualization/visualization",
     "pages/mine/mine"              
   ],
+  "lazyCodeLoading": "requiredComponents",
   "window": {
-    "navigationBarBackgroundColor": "#ffffff", 
+    "navigationBarBackgroundColor": "#FFD300", 
     "navigationBarTextStyle": "black",          
     "navigationBarTitleText": "我的记账本",  
     "backgroundTextStyle": "light",             
@@ -43,6 +44,6 @@
       }
     ]
   },
+
   "sitemapLocation": "sitemap.json",
   "style": "v2" }
-
