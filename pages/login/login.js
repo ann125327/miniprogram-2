@@ -45,6 +45,16 @@ const localUserInfo = wx.getStorageSync("userInfo");
     return;
   }
   const newUserInfo = e.detail.userInfo;
+
+  const isDefaultAvatar = newUserInfo.avatarUrl && (
+    newUserInfo.avatarUrl.includes('mmopen/vi_32/') || 
+    newUserInfo.avatarUrl.includes('mmopen/vi_40/')
+  );
+  // 若是默认头像，替换为猫咪.png
+  if (isDefaultAvatar) {
+    newUserInfo.avatarUrl = '/images/猫咪.png';
+  }
+
   this.setData({ 
     userInfo: newUserInfo,
     showAuthTip: false  

@@ -6,10 +6,9 @@
     <view class="avatar-wrap">
       <image 
         class="avatar" 
-        src="{{userInfo.avatarUrl || '/images/head1.png'}}" 
+        src="{{userInfo.avatarUrl || '/images/猫咪.png'}}" 
         mode="aspectFill"
       ></image>
-      <image class="edit-icon" src="/images/edit.png" mode="aspectFit"></image>
     </view>
     <view class="user-info">
       <text class="nickname">{{userInfo.nickName || '未设置昵称'}}</text>

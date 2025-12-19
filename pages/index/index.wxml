@@ -74,6 +74,6 @@
 
   <!--悬浮按钮-->
   <view class="float-btn" bindtap="goToAdd">
-    <text class="btn-icon">+</text>
+    <text class="btn-icon" style="position:relative ; left: 0rpx; top: -10rpx; font-size: 80rpx">+</text>
   </view>
 </view>

@@ -7,7 +7,7 @@
   <view class="avatar-wrapper">
     <image 
       class="avatar" 
-      src="{{userInfo.avatarUrl || '/images/head1.png'}}" 
+      src="{{userInfo.avatarUrl || '/images/猫咪.png'}}" 
       mode="aspectFill"
     ></image>
   </view>

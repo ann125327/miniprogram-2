@@ -109,5 +109,8 @@ Page({
     wx.setStorageSync("userInfo", newUserInfo);
     this.setData({ userInfo: newUserInfo });
     wx.showToast({ title: "昵称修改成功" });
+        wx.switchTab({
+      url: "/pages/mine/mine"
+    });
   }
 });
