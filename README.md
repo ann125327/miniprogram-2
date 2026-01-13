@@ -6,7 +6,7 @@
 ## 项目运行
 由于小程序正式版的发布需要备案和审批，我们的项目目前是小程序（体验版），体验版小程序无法搜索和分享，只有小程序项目管理员手动输入微信号添加的指定用户可以通过扫码查看（如果扫码无法打开请飞书联系【何舒平】）
 ###
-<img width="524" height="520" alt="记账喵123体验版（1月11日前有效）" src="https://github.com/user-attachments/assets/7d6da305-f024-4251-82c1-50673b582e53" />
+<img width="524" height="520" alt="记账喵123体验版（1月20日前有效）" src="https://github.com/user-attachments/assets/a44d9546-e341-4231-997f-ebfad7f9701f" />
 
 
 
